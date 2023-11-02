@@ -1,0 +1,790 @@
+openapi: 3.0.3
+info:
+  title: Moneyfer
+  version: 1.0.0
+  description: Moneyfer is a personal money management app, which allow you to keep
+    track on your financial goals and to enhance your money usage.
+paths:
+  /categories/expenses-category/:
+    get:
+      operationId: categories_expenses_category_list
+      tags:
+      - categories
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExpensesCategory'
+          description: ''
+    post:
+      operationId: categories_expenses_category_create
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpensesCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ExpensesCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ExpensesCategory'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpensesCategory'
+          description: ''
+  /categories/expenses-category/{id}/:
+    get:
+      operationId: categories_expenses_category_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expenses category.
+        required: true
+      tags:
+      - categories
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpensesCategory'
+          description: ''
+    put:
+      operationId: categories_expenses_category_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expenses category.
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpensesCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ExpensesCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ExpensesCategory'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpensesCategory'
+          description: ''
+    patch:
+      operationId: categories_expenses_category_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expenses category.
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedExpensesCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedExpensesCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedExpensesCategory'
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpensesCategory'
+          description: ''
+    delete:
+      operationId: categories_expenses_category_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expenses category.
+        required: true
+      tags:
+      - categories
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /categories/income-category/:
+    get:
+      operationId: categories_income_category_list
+      tags:
+      - categories
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IncomeCategory'
+          description: ''
+    post:
+      operationId: categories_income_category_create
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncomeCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/IncomeCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/IncomeCategory'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncomeCategory'
+          description: ''
+  /categories/income-category/{id}/:
+    get:
+      operationId: categories_income_category_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income category.
+        required: true
+      tags:
+      - categories
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncomeCategory'
+          description: ''
+    put:
+      operationId: categories_income_category_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income category.
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncomeCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/IncomeCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/IncomeCategory'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncomeCategory'
+          description: ''
+    patch:
+      operationId: categories_income_category_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income category.
+        required: true
+      tags:
+      - categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedIncomeCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedIncomeCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedIncomeCategory'
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncomeCategory'
+          description: ''
+    delete:
+      operationId: categories_income_category_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income category.
+        required: true
+      tags:
+      - categories
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /expenses/:
+    get:
+      operationId: expenses_list
+      tags:
+      - expenses
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Expense'
+          description: ''
+    post:
+      operationId: expenses_create
+      tags:
+      - expenses
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Expense'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Expense'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+          description: ''
+  /expenses/{id}/:
+    get:
+      operationId: expenses_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expense.
+        required: true
+      tags:
+      - expenses
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+          description: ''
+    put:
+      operationId: expenses_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expense.
+        required: true
+      tags:
+      - expenses
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Expense'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Expense'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+          description: ''
+    patch:
+      operationId: expenses_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expense.
+        required: true
+      tags:
+      - expenses
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedExpense'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedExpense'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedExpense'
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+          description: ''
+    delete:
+      operationId: expenses_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this expense.
+        required: true
+      tags:
+      - expenses
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+  /income/:
+    get:
+      operationId: income_list
+      tags:
+      - income
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Income'
+          description: ''
+    post:
+      operationId: income_create
+      tags:
+      - income
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Income'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Income'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Income'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+          description: ''
+  /income/{id}/:
+    get:
+      operationId: income_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income.
+        required: true
+      tags:
+      - income
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+          description: ''
+    put:
+      operationId: income_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income.
+        required: true
+      tags:
+      - income
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Income'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Income'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Income'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+          description: ''
+    patch:
+      operationId: income_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income.
+        required: true
+      tags:
+      - income
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedIncome'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedIncome'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedIncome'
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+          description: ''
+    delete:
+      operationId: income_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this income.
+        required: true
+      tags:
+      - income
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Expense:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        amount:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        user:
+          type: integer
+        category:
+          type: integer
+      required:
+      - category
+      - description
+      - id
+      - user
+    ExpensesCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        category_name:
+          type: string
+          maxLength: 255
+        date:
+          type: string
+          format: date
+          readOnly: true
+        description:
+          type: string
+        user:
+          type: integer
+      required:
+      - category_name
+      - date
+      - description
+      - id
+      - user
+    Income:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        amount:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        user:
+          type: integer
+        category:
+          type: integer
+      required:
+      - category
+      - id
+      - user
+    IncomeCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        category_name:
+          type: string
+          maxLength: 255
+        date:
+          type: string
+          format: date
+          readOnly: true
+        description:
+          type: string
+        user:
+          type: integer
+      required:
+      - category_name
+      - date
+      - description
+      - id
+      - user
+    PatchedExpense:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        amount:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        user:
+          type: integer
+        category:
+          type: integer
+    PatchedExpensesCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        category_name:
+          type: string
+          maxLength: 255
+        date:
+          type: string
+          format: date
+          readOnly: true
+        description:
+          type: string
+        user:
+          type: integer
+    PatchedIncome:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        amount:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        user:
+          type: integer
+        category:
+          type: integer
+    PatchedIncomeCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        category_name:
+          type: string
+          maxLength: 255
+        date:
+          type: string
+          format: date
+          readOnly: true
+        description:
+          type: string
+        user:
+          type: integer
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
